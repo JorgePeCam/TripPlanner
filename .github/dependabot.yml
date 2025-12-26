@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "swift"
+    directory: "/Packages/HabitCoachKit"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 5
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "deps"
+    groups:
+      swift-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
