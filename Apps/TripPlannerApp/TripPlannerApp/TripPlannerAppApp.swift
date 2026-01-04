@@ -1,32 +1,17 @@
-//
-//  TripPlannerAppApp.swift
-//  TripPlannerApp
-//
-//  Created by Jorge on 4/1/26.
-//
-
 import SwiftUI
-import SwiftData
+import TripPlannerKit
 
 @main
 struct TripPlannerAppApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewTripView(vm: .init(generateItinerary: makeGenerateItineraryUseCase()))
         }
-        .modelContainer(sharedModelContainer)
+    }
+
+    private func makeGenerateItineraryUseCase() -> GenerateItineraryUseCase {
+        // Por ahora fake. Luego aquí cambiaremos a AIItineraryGenerator.
+        let generator = FakeItineraryGenerator()
+        return GenerateItineraryUseCase(generator: generator)
     }
 }
