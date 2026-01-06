@@ -87,10 +87,3 @@ struct NewTripView: View {
         )
     }
 }
-
-private extension NewTripViewModel {
-    var isLoading: Bool {
-        if case .loading = state { return true }
-        return false
-    }
-}

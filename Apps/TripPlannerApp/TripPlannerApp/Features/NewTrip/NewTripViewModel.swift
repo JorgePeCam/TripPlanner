@@ -5,15 +5,15 @@ import TripPlannerKit
 @MainActor
 @Observable
 final class NewTripViewModel {
-    // Inputs
+    // MARK: - Inputs
     var destination: String = ""
     var days: Int = 3
     var selectedPreferences: Set<Preference> = []
 
-    // Output state
+    // MARK: - Output state
     private(set) var state: State = .idle
 
-    private let generateItinerary: GenerateItineraryUseCase
+    private let buildItinerary: BuildItineraryUseCase
 
     enum State: Equatable {
         case idle
@@ -22,8 +22,8 @@ final class NewTripViewModel {
         case failure(String)
     }
 
-    init(generateItinerary: GenerateItineraryUseCase) {
-        self.generateItinerary = generateItinerary
+    init(buildItinerary: BuildItineraryUseCase) {
+        self.buildItinerary = buildItinerary
     }
 
     var canGenerate: Bool {
@@ -46,8 +46,13 @@ final class NewTripViewModel {
 
         state = .loading
         do {
-            let request = TripRequest(destination: destination, days: days, preferences: selectedPreferences)
-            let itinerary = try await generateItinerary(request: request)
+            let request = TripRequest(
+                destination: destination.trimmingCharacters(in: .whitespacesAndNewlines),
+                days: days,
+                preferences: selectedPreferences
+            )
+
+            let itinerary = try await buildItinerary(request: request)
             state = .success(itinerary)
         } catch {
             state = .failure("Failed to generate itinerary. \(error.localizedDescription)")
@@ -56,5 +61,12 @@ final class NewTripViewModel {
 
     func resetResult() {
         state = .idle
+    }
+}
+
+extension NewTripViewModel {
+    var isLoading: Bool {
+        if case .loading = state { return true }
+        return false
     }
 }

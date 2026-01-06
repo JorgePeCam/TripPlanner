@@ -5,13 +5,12 @@ import TripPlannerKit
 struct TripPlannerAppApp: App {
     var body: some Scene {
         WindowGroup {
-            NewTripView(vm: .init(generateItinerary: makeGenerateItineraryUseCase()))
+            NewTripView(vm: .init(buildItinerary: makeBuildItineraryUseCase()))
         }
     }
 
-    private func makeGenerateItineraryUseCase() -> GenerateItineraryUseCase {
-        // Por ahora fake. Luego aquí cambiaremos a AIItineraryGenerator.
-        let generator = FakeItineraryGenerator()
-        return GenerateItineraryUseCase(generator: generator)
+    private func makeBuildItineraryUseCase() -> BuildItineraryUseCase {
+        let placesRepository = MockPlacesRepository()
+        return BuildItineraryUseCase(placesRepository: placesRepository)
     }
 }
