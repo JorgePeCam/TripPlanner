@@ -1,5 +1,9 @@
 import Foundation
 
+/// Nominatim client (OpenStreetMap) used for geocoding.
+/// Important:
+/// - Nominatim requires a meaningful User-Agent (and ideally contact info).
+/// - Be mindful of rate limits; consider caching destination -> coordinates.
 struct NominatimClient: Sendable {
     struct Place: Decodable {
         let lat: String

@@ -1,5 +1,9 @@
 import Foundation
 
+/// Overpass API client used to query OSM POIs around coordinates.
+/// Notes:
+/// - Overpass endpoints may be slow or rate-limited; consider retry/backoff and fallback endpoints.
+/// - We use `application/x-www-form-urlencoded` with a `data=` payload, which is the common pattern.
 struct OverpassClient: Sendable {
     struct OverpassResponse: Decodable {
         let elements: [Element]
