@@ -10,7 +10,7 @@ struct TripPlannerAppApp: App {
     }
 
     private func makeBuildItineraryUseCase() -> BuildItineraryUseCase {
-        let placesRepository = MockPlacesRepository()
+        let placesRepository = OSMPlacesRepository()
         return BuildItineraryUseCase(placesRepository: placesRepository)
     }
 }

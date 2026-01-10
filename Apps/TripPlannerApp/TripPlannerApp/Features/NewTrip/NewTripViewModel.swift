@@ -55,6 +55,7 @@ final class NewTripViewModel {
             let itinerary = try await buildItinerary(request: request)
             state = .success(itinerary)
         } catch {
+            print("Generate error:", error)
             state = .failure("Failed to generate itinerary. \(error.localizedDescription)")
         }
     }
