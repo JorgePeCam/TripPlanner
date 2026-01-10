@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF3954692F0EF29F00EDB775 /* TripPlannerKit in Frameworks */ = {isa = PBXBuildFile; productRef = CF3954682F0EF29F00EDB775 /* TripPlannerKit */; };
 		CFFE23DD2F0B050C009463C9 /* TripPlannerKit in Frameworks */ = {isa = PBXBuildFile; productRef = CFFE23DC2F0B050C009463C9 /* TripPlannerKit */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF39546A2F0EF30300EDB775 /* TripPlannerAppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = TripPlannerAppTests.xctestplan; sourceTree = "<group>"; };
 		CFFE23A22F0AF527009463C9 /* TripPlannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFE23B12F0AF527009463C9 /* TripPlannerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripPlannerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFE23BB2F0AF528009463C9 /* TripPlannerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripPlannerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFE23DE2F0DAEFC009463C9 /* TripPlannerKitTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TripPlannerKitTests; path = ../../Packages/TripPlannerKit/Tests/TripPlannerKitTests; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3954692F0EF29F00EDB775 /* TripPlannerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +84,8 @@
 		CFFE23992F0AF527009463C9 = {
 			isa = PBXGroup;
 			children = (
+				CF39546A2F0EF30300EDB775 /* TripPlannerAppTests.xctestplan */,
+				CFFE23DE2F0DAEFC009463C9 /* TripPlannerKitTests */,
 				CFFE23A42F0AF527009463C9 /* TripPlannerApp */,
 				CFFE23B42F0AF527009463C9 /* TripPlannerAppTests */,
 				CFFE23BE2F0AF528009463C9 /* TripPlannerAppUITests */,
@@ -149,6 +155,7 @@
 			);
 			name = TripPlannerAppTests;
 			packageProductDependencies = (
+				CF3954682F0EF29F00EDB775 /* TripPlannerKit */,
 			);
 			productName = TripPlannerAppTests;
 			productReference = CFFE23B12F0AF527009463C9 /* TripPlannerAppTests.xctest */;
@@ -604,6 +611,11 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CF3954682F0EF29F00EDB775 /* TripPlannerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFFE23D32F0AF852009463C9 /* XCLocalSwiftPackageReference "../../Packages/TripPlannerKit" */;
+			productName = TripPlannerKit;
+		};
 		CFFE23DC2F0B050C009463C9 /* TripPlannerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CFFE23D32F0AF852009463C9 /* XCLocalSwiftPackageReference "../../Packages/TripPlannerKit" */;

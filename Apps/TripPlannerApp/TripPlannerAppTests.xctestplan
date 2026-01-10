@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "A7EC8AC9-6E05-4543-A82C-B58EB11831B7",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TripPlannerApp.xcodeproj",
+        "identifier" : "CFFE23B02F0AF527009463C9",
+        "name" : "TripPlannerAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

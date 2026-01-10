@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A07D1E64-CB22-4940-A568-B70BB61050D8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "TripPlannerKitTests",
+        "name" : "TripPlannerKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
